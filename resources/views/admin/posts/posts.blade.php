@@ -37,7 +37,7 @@
                         <span onclick="deleteProduct(this, {{$post->id}});"
                               class="fa fa-trash mlg-15"
                               title="حذف"></span>
-                        <span onclick="changeVisibility(this, {{ $post->id }})"
+                        <span onclick="changeVisibility(this, {{ $post->id }});"
                               class="fa {{ $post->status == 0 ? 'fa-eye' : 'fa-lock' }} mlg-15"></span>
                     </td>
                 </tr>

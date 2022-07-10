@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('phone', 11)->unique();
-            $table->string('profile', 255)->nullable();
             $table->string('city')->nullable();
             $table->string('province')->nullable();
-            $table->string('hash', 32);
             $table->timestamp('phone_verified_at')->nullable();
             $table->timestamps();
         });

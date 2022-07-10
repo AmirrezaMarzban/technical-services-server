@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CooperationController;
-use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\PMethodController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
@@ -26,7 +25,9 @@ Route::get('/', function () {
 })->name('main');
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/panel', [PanelController::class, 'index'])->name('panel.index');
+    Route::get('/panel', function () {
+        return view('admin.panel');
+    })->name('panel.index');
     Route::patch('/posts/exist/{post}', [PostController::class, 'exist'])->name('posts.isExist');
     Route::resources([
         'users' => UserController::class,

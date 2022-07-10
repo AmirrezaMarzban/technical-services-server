@@ -11,8 +11,7 @@
                 @method('POST')
                 <div class="form-group">
                     <label>نام دسته بندی</label>
-                    <input type="text" name="name" placeholder="نام دسته بندی"
-                           class="form-control">
+                    <input type="text" name="name" placeholder="نام دسته بندی" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary">اضافه کردن</button>
             </form>

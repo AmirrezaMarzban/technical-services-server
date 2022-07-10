@@ -41,7 +41,6 @@ Route::prefix('v1')->group(function () {
         Route::get("/cooperations", [CooperationController::class, 'index']);
         Route::get("/search", [SearchController::class, 'index']);
         Route::get("/recent", [PostController::class, 'recent']);
-        Route::post("/recent", [PostController::class, 'addToRecent']);
         Route::get("/pmethods", [PMethodController::class, 'index']);
         Route::get("/workinghours", [WorkinghoursController::class, 'index']);
         Route::get("/workingExperiences", [WorkingExperiencesController::class, 'index']);

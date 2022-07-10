@@ -28,15 +28,16 @@ class PostController extends Controller
     }
 
     public function single(Post $post) {
+        $this->addToRecent($post);
         return new PostResource($post);
     }
 
-    public function addToRecent(Request $request)
+    private function addToRecent(Post $post)
     {
-        $isExist = auth()->user()->recentPosts->where('id', $request->post_id)->first();
+        $isExist = auth()->user()->recentPosts->where('id', $post->id)->first();
         if (!$isExist) {
             PostUser::create([
-                'post_id' => $request->post_id,
+                'post_id' => $post->id,
                 'user_id' => auth()->user()->id,
             ]);
         }

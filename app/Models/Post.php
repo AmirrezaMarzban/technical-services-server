@@ -71,11 +71,11 @@ class Post extends Model
         return $this->belongsToMany(User::class, "post_user");
     }
 
-    public function provinceId() {
-        return Province::where('name', explode(' / ', $this->p_c)[0])->id;
+    public function provinceName() {
+        return explode(' / ', $this->p_c)[0];
     }
 
-    public function cityId() {
-        return City::where('name', explode(' / ', $this->p_c)[1])->id;
+    public function cityName() {
+        return explode(' / ', $this->p_c)[1];
     }
 }

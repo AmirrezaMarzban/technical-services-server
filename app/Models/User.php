@@ -18,10 +18,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'phone',
-        'profile',
         'city_id',
         'province_id',
-        'hash',
         'phone_verified',
         'phone_verified_at',
         'created_at',
@@ -34,6 +32,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+
         'password',
         'remember_token',
     ];
@@ -63,5 +62,12 @@ class User extends Authenticatable
 
     public function p_c() {
         return Province::where('id', $this->province_id)->first()->name . ' / ' . City::where('id', $this->city_id)->first()->name;
+    }
+
+    public function province() {
+        return $this->belongsTo(Province::class);
+    }
+    public function city() {
+        return City::where('id', $this->city_id)->first()->name;
     }
 }

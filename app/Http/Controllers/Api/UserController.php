@@ -25,8 +25,6 @@ class UserController extends Controller
         $user = User::where('phone', $request->phone)->first();
         if ($user) {
             $checkAcivateCode = $user->activationCode()->where('expired', '>=', now());
-            //$checkAcivateCode2 = $user->activationCode()->where('expired', '<=', now());
-
             if ($checkAcivateCode->count() == 4) {
                 if ($checkAcivateCode->latest()->first()->expired > now()) {
                     return response([
@@ -42,10 +40,8 @@ class UserController extends Controller
         } else {
             $user = User::create([
                 'phone' => $request->phone,
-                'profile' => 'profiles/avatar.png',
                 'city_id' => 999,
                 'province_id' => 28,
-                'hash' => Str::random(32),
             ]);
             event(new UserActivation($user));
             if ($request->wantsJson())

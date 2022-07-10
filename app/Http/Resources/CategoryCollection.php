@@ -20,7 +20,7 @@ class CategoryCollection extends ResourceCollection
                 return [
                     'id' => $item->id,
                     'title' => $item->title,
-                    'icon' => 'http://192.168.1.100:8000/' . $item->icon,
+                    'icon' => 'http://192.168.1.5:8000/' . $item->icon,
                     'background' => $item->background
                 ];
             })

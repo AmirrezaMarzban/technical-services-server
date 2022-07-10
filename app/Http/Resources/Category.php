@@ -18,10 +18,11 @@ class Category extends JsonResource
         return [[
             'id' => $this->id,
             'title' => $this->title,
-            'icon' => $this->icon,
+            'icon' => 'http://192.168.1.5:8000/' . $this->icon,
             'background' => $this->background,
             'count' => $this->posts->count(),
-            'posts' => new PostCollection($this->posts->where('status', 1)->where('p_c', auth()->user()->p_c()))
+            'posts' => new PostCollection($this->posts->where('status', 1))
+//                ->where('p_c', auth()->user()->p_c()))
         ]];
     }
 }

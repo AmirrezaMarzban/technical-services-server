@@ -38,7 +38,6 @@
     <!-- template rtl version -->
     <link rel="stylesheet" href="/admin/css/custom-style.css">
 
-    <link href="/admin/img/cms-icon.png" rel="shortcut icon">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -125,15 +124,6 @@
                                 </p>
                             </a>
                         </li>
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{ route('transactions.index') }}" class="nav-link {{ Request::is('admin/transactions*') ? 'active' : '' }}">--}}
-{{--                                <i class="nav-icon fa fa-dollar"></i>--}}
-{{--                                <p>--}}
-{{--                                    مدیریت تراکنش ها<span--}}
-{{--                                        class="badge badge-danger right">{{ \App\Models\Transaction::where('status', 0)->count() }}</span>--}}
-{{--                                </p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
